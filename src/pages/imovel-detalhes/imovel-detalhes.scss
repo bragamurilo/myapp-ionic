@@ -1,0 +1,57 @@
+page-imovel-detalhes {
+    .image-slider{
+        max-height: 300px !important;
+    }
+    on-slide.swiper-slide {
+        left: 25%;
+    }
+    
+    .slide-zoom {
+        // background: #000000;
+    }
+
+    .desc-imovel{
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .desc-imovel .preco{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .desc-imovel span{
+        display: block;
+    }
+
+    .desc-imovel ion-col{
+        text-align: center;
+    }
+
+    .desc-imovel i{
+        font-size: 1.2em;
+    }
+
+    .desc-imovel span.num{
+        color: #696969;
+        padding-top: 3px;
+    }
+
+    // ion-header {
+        
+    //     .toolbar {
+    //       position: absolute;          
+      
+    //       .toolbar-background {
+    //         background: transparent;
+    //       }
+    //       .toolbar-title {
+    //         color: black;
+    //       }
+    //     }
+
+    //     .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+    //         border-width: 0 0 0.0px;
+    //     }
+    // }
+}

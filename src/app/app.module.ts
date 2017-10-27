@@ -10,8 +10,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
+import { MoovieProvider } from '../providers/moovie/moovie';
+import { ImovelDetalhesPageModule } from '../pages/imovel-detalhes/imovel-detalhes.module';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { IntroPageModule } from '../pages/intro/intro.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FeedPageModule,
-    IntroPageModule
+    IntroPageModule,
+    HttpModule,
+    ImovelDetalhesPageModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,12 +40,13 @@ import { IntroPageModule } from '../pages/intro/intro.module';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage    
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MoovieProvider
   ]
 })
 export class AppModule {}

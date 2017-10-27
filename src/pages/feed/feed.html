@@ -6,36 +6,42 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Feed</ion-title>
+  <ion-navbar color="primary">
+		<ion-title>Imóveis</ion-title>
+			<ion-buttons end>
+				<button ion-button icon-only (click)="openModalFilter()">
+					<ion-icon name="search"></ion-icon>
+				</button>
+			</ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-	<div>Olá {{nome_usuario}}</div>
-	<ion-card>
-		<img src="http://www.webmobby.com.br/adm/arquivos/13bolsa/galeria_fotos/thumb_g/140917-59bad7f32039a.jpg"/>
-		<ion-card-content>
-			<ion-card-title>
-				PREMIATTO
-			</ion-card-title>
-			<p>
-				Os apartamentos foram projetados pensando no seu conforto diário.
-			</p>
+<ion-content padding class="bg-color">
+	<ion-card *ngFor="let imovel of lista_imoveis" class="card" (click)="goToImovelDetalhes(imovel.cod_imovel);">
+		
+		<img [src]="imovel.fotos[0].arquivo"/>
+		<ion-card-content class="card-body">
+			<!-- <ion-card-title>
+				{{imovel.nome_tipo}}
+			</ion-card-title> -->			
+			<div class="descricao-imovel">
+				<i class="fa fa-bed" aria-hidden="true"></i>
+				<span class="num">{{imovel.num_quartos}}</span>
+
+				<i class="fa fa-bath" aria-hidden="true"></i>
+				<span class="num">{{imovel.num_banheiros}}</span>
+
+				<i class="fa fa-car" aria-hidden="true"></i>
+				<span class="num">{{imovel.num_garagens}}</span>
+			</div>
+			<div class="endereco">
+				<p>{{imovel.nome_tipo}}</p>
+				<p>{{imovel.bairro}} - {{imovel.cidade}}</p>
+			</div>
 		</ion-card-content>
 	</ion-card>
 
-	<ion-card>
-		<img src="http://www.webmobby.com.br/adm/arquivos/13bolsa/galeria_fotos/thumb_g/140917-59ba859507b1c.jpg"/>
-		<ion-card-content>
-			<ion-card-title>
-				CYRELA ESTORIL 
-			</ion-card-title>
-			<p>
-				O Cyrela Estoril é o resultado de um feliz encontro de ideias de pessoas diretamente ligadas ao desenvolvimento de Bauru e a Cyrela Urbanismo. 
-			</p>
-		</ion-card-content>
-	</ion-card>
+	
 </ion-content>
